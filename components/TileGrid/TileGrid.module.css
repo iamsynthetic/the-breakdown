@@ -1,0 +1,22 @@
+
+.tileGrid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns, 4), minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 40px;
+  width: 100%;
+  padding-inline: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+  .tileGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .tileGrid {
+    grid-template-columns: 1fr;
+  }
+}

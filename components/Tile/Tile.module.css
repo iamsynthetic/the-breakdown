@@ -1,0 +1,124 @@
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+}
+
+/* Near-square image, slightly taller than wide */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.03;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.imageWrapper img {
+  object-fit: cover;
+}
+
+.imageLink {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.tileInfo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px;
+}
+
+.tileDetails {
+  min-width: 0;
+}
+
+.preHeadline {
+  margin: 0 0 12px;
+  font-family: var(--font-preheadline);
+  font-size: var(--tile-pre-headline);
+  font-weight: var(--weight-extralight);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--lavender);
+}
+
+.headline {
+  margin: 0 0 12px;
+  font-family: var(--font-heading);
+  font-size: var(--tile-headline);
+  font-weight: var(--weight-black);
+}
+
+.headlineLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*.headlineLink:hover {
+  color: var(--pink);
+}*/
+
+.reviewScore {
+  color: var(--red);
+  font-family: var(--font-heading);
+  font-size: var(--tile-score);
+  font-weight: var(--weight-black);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.body {
+  margin: 0 0 16px;
+  font-family: var(--font-body);
+  font-size: var(--tile-body);
+  font-weight: var(--weight-extralight);
+  color:var(--lavender);
+  /*opacity:.8;*/
+}
+
+/* Keep the button at the bottom */
+.buttonWrapper {
+  margin-top: auto;
+}
+
+.buttonWrapper :global(a) {
+  margin-top: 0;
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.horizontal .imageWrapper {
+  flex: 0 0 40%;
+  width: 25%;
+  min-width: 0;
+  aspect-ratio: 1;
+  height: auto;
+}
+
+.horizontal .buttonWrapper{
+    margin-top:0;
+}
+
+.horizontal .tileContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+}
+
+.horizontal .content {
+  flex: 1;
+  min-width: 0;
+}

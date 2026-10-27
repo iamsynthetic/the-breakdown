@@ -1,0 +1,257 @@
+.contact {
+  width: 100%;
+  box-sizing: border-box;
+  background: #000;
+  color: #fff;
+  /*padding: 64px 40px;*/
+  /*margin-block: var(--section-spacing);*/
+  /*margin-bottom:-80px;*/
+
+  padding:0px 0px 180px 0px;
+}
+
+.content {
+width: 100%;
+/*max-width: 1200px;*/
+
+max-width: 1440px;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+text-align: left;
+gap: 20px;
+
+/*padding:0px 0px 200px 0px;*/
+}
+
+/*.preHeadline {
+margin: 0;
+font-size: 0.8rem;
+font-weight: 700;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+}
+
+.headline {
+margin: 0;
+max-width: 900px;
+font-size: clamp(2rem, 5vw, 4rem);
+line-height: 1.15;
+font-weight: 700;
+}*/
+
+.preHeadline {
+  margin: 0px;
+  font-family: var(--font-preheadline);
+  font-size: var(--tile-pre-headline);
+  font-weight: var(--weight-extralight);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /*color: var(--lavender);*/
+}
+
+.headline {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--hero-headline);
+  font-weight: var(--weight-regular);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  overflow-wrap: anywhere;
+}
+
+/*.subheadline {
+margin: 0;
+max-width: 700px;
+font-size: 1.1rem;
+line-height: 1.6;
+}*/
+
+.body {
+  margin: 0 0 16px;
+  font-family: var(--font-body);
+  font-size: var(--special-body);
+  font-weight: var(--weight-regular);
+  color:var(--white);
+}
+.wordmark {
+margin: 0;
+font-size: 0.95rem;
+font-weight: 600;
+letter-spacing: 0.04em;
+}
+
+.form {
+width: 100%;
+max-width: 620px;
+margin-top: 12px;
+}
+
+.label {
+/*display: block;
+margin-bottom: 10px;
+font-size: 0.9rem;
+font-weight: 600;*/
+
+margin-bottom: 10px;
+font-family: var(--font-preheadline);
+font-size: var(--tile-pre-headline);
+font-weight: var(--weight-extralight);
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.formRow {
+display: flex;
+align-items: stretch;
+gap: 12px;
+width: 100%;
+/*margin-bottom: 10px;*/
+font-family: var(--font-preheadline);
+font-size: var(--hero-body);
+font-weight: var(--weight-extralight);
+text-transform: uppercase;
+/*letter-spacing: 1px;*/
+}
+
+.input {
+flex: 1;
+min-width: 0;
+box-sizing: border-box;
+padding: 14px 16px;
+border: 1px solid #777;
+border-radius: 0;
+background: #fff;
+color: #111;
+font: inherit;
+font-size: 1rem;
+}
+
+.input:focus-visible,
+.subscribeButton:focus-visible {
+outline: 2px solid #fff;
+outline-offset: 4px;
+}
+
+.input[aria-invalid="true"] {
+border-color: #ff8a8a;
+}
+
+/*.subscribeButton {
+flex-shrink: 0;
+padding: 14px 24px;
+border: 1px solid #fff;
+border-radius: 0;
+background: #fff;
+color: #000;
+font-family: var(--font-button);
+font-size: var(--hero-button);
+font-weight: var(--weight-light);
+cursor: pointer;
+transition:
+background 0.2s ease,
+color 0.2s ease;
+}*/
+
+
+/*
+.subscribeButton:hover {
+background: #000;
+color: #fff;
+}*/
+
+.subscribeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  /*margin-top: 30px;*/
+  padding: 8px 14px;
+  font-family: var(--font-button);
+  font-size: var(--hero-button);
+  font-weight: var(--weight-light);
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border:none;
+  background-color: var(--pink);
+  color: var(--black);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.subscribeButton::after {
+  content: '→';
+  display: block;
+  flex-shrink: 0;
+  font-size: 18px;
+  line-height: 1.2;
+  transform: translate(0, -3px);
+  transition: transform 0.3s ease;
+}
+
+.subscribeButton:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.error {
+margin: 12px 0 0;
+color: #ffaaaa;
+font-size: 0.9rem;
+}
+
+.thankYou {
+margin: 0 0 16px;
+font-family: var(--font-body);
+font-size: var(--special-body);
+font-weight: var(--weight-regular);
+color:var(--white);
+animation: fadeIn 0.6s ease both;
+}
+
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translateY(8px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@media (max-width: 600px) {
+.contact {
+padding: 44px 20px;
+}
+
+.content {
+gap: 16px;
+}
+
+.subheadline {
+font-size: 1rem;
+}
+
+.formRow {
+flex-direction: column;
+}
+
+.input,
+.subscribeButton {
+width: 100%;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+.thankYou {
+animation: none;
+}
+
+.subscribeButton {
+transition: none;
+}
+}

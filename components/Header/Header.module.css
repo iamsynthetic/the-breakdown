@@ -1,0 +1,546 @@
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  width: 100%;
+  padding: 24px 5%;
+  box-sizing: border-box;
+
+  background: var(--stone);
+
+  transition:
+      padding 300ms ease,
+      box-shadow 300ms ease,
+      background-color 300ms ease;
+}
+
+.headerMain {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  transition: gap 300ms ease;
+}
+
+/* ========================================
+   SCROLLED / COMPACT HEADER
+======================================== */
+
+.headerScrolled {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 0 4px 16px rgb(19 19 17 / 8%);
+}
+
+.headerScrolled .brandLink h1 {
+  font-size: clamp(22px, 2vw, 32px);
+  letter-spacing: 0.25rem;
+}
+
+.headerScrolled .navigation {
+  margin-top: 12px;
+}
+
+
+/* ========================================
+   SOCIAL ICONS
+======================================== */
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.desktopSocials {
+  justify-content: flex-start;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  font-size: 18px;
+  transition: opacity 0.2s ease;
+}
+
+.socials a:hover {
+  opacity: 0.6;
+}
+
+
+/* ========================================
+   BRAND / LOGO
+======================================== */
+
+.brand {
+  min-width: 0;
+  text-align: center;
+}
+
+.brandLink {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brandLink h1 {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3vw, 46px);
+  font-weight: var(--weight-bold);
+  line-height: 0.95;
+  letter-spacing: 0.5rem;
+  transition:
+      font-size 300ms ease,
+      letter-spacing 300ms ease;
+}
+
+.brandLink p {
+  margin: 10px 0 0;
+  font-size: 12px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   SUBSCRIBE / LOGIN
+======================================== */
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+.actions a {
+  color: inherit;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.actions a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+
+/* ========================================
+   DESKTOP NAVIGATION
+======================================== */
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 28px;
+
+  transition:
+      margin-top 300ms ease,
+      gap 300ms ease;
+}
+
+.navigation a {
+  color: inherit;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.navigation a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+
+/* ========================================
+   MOBILE MENU CONTROLS
+======================================== */
+
+/* Hidden on desktop */
+
+.menuToggle,
+.mobileNav,
+.menuBackdrop{
+  display: none;
+}
+
+
+/* ========================================
+   TABLET AND MOBILE
+======================================== */
+
+@media (max-width: 1024px) {
+
+    /* Compact mobile / tablet header when scrolling */
+
+    .headerScrolled {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .brandLink h1 {
+      transition:
+        font-size 300ms ease,
+        letter-spacing 300ms ease;
+    }
+
+    .headerScrolled .brandLink h1 {
+      /*font-size: clamp(16px, 3vw, 22px);
+      letter-spacing: 0.08em;*/
+      font-size: 28px;
+        letter-spacing: 0.08em;
+    }
+
+    .menuToggle {
+      transition:
+        width 300ms ease,
+        height 300ms ease,
+        opacity 200ms ease;
+    }
+
+    .headerScrolled .menuToggle {
+      width: 36px;
+      height: 36px;
+    }
+
+
+  .header {
+    /*padding: 20px 5%;*/
+    max-width: var(--content-max-width);
+    /*margin: 20px auto var(--section-spacing);*/
+    margin: 0 auto var(--section-spacing);
+    padding-inline: var(--page-gutter);
+  }
+
+  /* Header top row */
+
+  .headerMain {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 12px;
+  }
+
+  .desktopSocials {
+    display: none;
+  }
+
+  /* Hide only Subscribe on mobile */
+  .actions a[href="/subscribe"] {
+    display: none;
+  }
+
+  /* Keep Login visible */
+  .actions {
+    display: flex;
+    grid-column: 3;
+    grid-row: 1;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .brand {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .brandLink h1 {
+    font-size: clamp(18px, 4vw, 28px);
+    letter-spacing: 0.12em;
+  }
+
+  .actions {
+    grid-column: 3;
+    grid-row: 1;
+    gap: 10px;
+  }
+
+  .actions a {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Hamburger button */
+
+  .menuToggle {
+    display: inline-flex;
+    grid-column: 1;
+    grid-row: 1;
+    align-items: center;
+    justify-content: left;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--black);
+    font-size: 23px;
+    cursor: pointer;
+  }
+
+  .menuToggle:hover {
+    opacity: 0.65;
+  }
+
+  /* Hide desktop navigation */
+
+  .navigation {
+    display: none;
+  }
+
+  /* Backdrop */
+
+  .menuBackdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: rgb(19 19 17 / 55%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 300ms ease,
+      visibility 300ms ease;
+  }
+
+  .backdropOpen {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Flyout panel */
+
+  .mobileNav {
+    display: flex;
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 101;
+    flex-direction: column;
+    width: min(85vw, 360px);
+    height: 100vh;
+    height: 100dvh;
+    padding: 28px 28px 32px;
+    overflow-y: auto;
+    background: var(--stone);
+    color: var(--black);
+    box-shadow: 12px 0 40px rgb(0 0 0 / 10%);
+
+    transform: translateX(-100%);
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+      transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 350ms ease;
+  }
+
+  .mobileNavOpen {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Subscribe / Login inside mobile flyout */
+
+  .mobileActions {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 24px;
+    padding-top: 12px;
+    border-top: 1px solid rgb(19 19 17 / 15%);
+  }
+
+  .mobileActions a {
+    padding: 12px 0;
+    color: var(--red);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: var(--weight-semibold);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .mobileActions a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  /* Flyout header */
+
+  .mobileNavHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgb(19 19 17 / 15%);
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: var(--weight-bold);
+    letter-spacing: 2px;
+  }
+
+  .mobileClose {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  /* Vertical menu links */
+
+  .mobileNavLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 16px;
+  }
+
+  .mobileNavLinks a {
+    padding: 13px 0;
+    border-bottom: 1px solid rgb(19 19 17 / 10%);
+    color: inherit;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: var(--weight-medium);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition:
+      color 180ms ease,
+      padding-left 180ms ease;
+  }
+
+  .mobileNavLinks a:hover {
+    padding-left: 6px;
+    color: var(--red);
+  }
+
+  /* Social icons at the bottom */
+
+  .mobileNavFooter {
+    margin-top: auto;
+    padding-top: 36px;
+  }
+
+  .mobileNavFooter p {
+    margin: 0 0 18px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: var(--weight-bold);
+    letter-spacing: 1.5px;
+  }
+
+  .mobileNavFooter .socials {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .mobileNavFooter .socials a {
+    font-size: 22px;
+  }
+}
+
+/* medium mobile */
+@media (max-width: 768px){
+
+    .headerScrolled .brandLink h1 {
+        font-size: 19px;
+        letter-spacing: 0.08em;
+    }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+  .headerMain {
+    gap: 6px;
+  }
+
+  .menuToggle {
+    width: 34px;
+    font-size: 21px;
+  }
+
+  .brandLink h1 {
+    font-size: 16px;
+    letter-spacing: 0.08em;
+  }
+
+  .actions {
+    gap: 7px;
+  }
+
+  .actions a {
+    font-size: 9px;
+    letter-spacing: 0;
+  }
+
+  .mobileNav {
+    padding-inline: 22px;
+  }
+}
+
+.navigation a.navActive,
+.mobileNavLinks a.navActive {
+  color: var(--pink);
+  pointer-events: none; /* makes it inactive: no hover, no click */
+  cursor: default;
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .header,
+    .headerMain,
+    .brandLink h1,
+    .navigation,
+    .menuToggle,
+    .mobileNav,
+    .menuBackdrop,
+    .mobileNavLinks a,
+    .socials a {
+        transition: none;
+    }
+}

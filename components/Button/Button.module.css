@@ -1,0 +1,79 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 30px;
+  padding: 8px 14px;
+  font-family: var(--font-button);
+  font-size: var(--hero-button);
+  font-weight: var(--weight-light);
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.button::after {
+  content: '→';
+  display: block;
+  flex-shrink: 0;
+  font-size: 18px;
+  line-height: 1.2;
+  transform: translate(0, -3px);
+  transition: transform 0.3s ease;
+}
+
+.buttonText {
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+/* Filled variant */
+.button.filled {
+  background-color: var(--pink);
+  color: var(--black);
+}
+
+.button.filled:hover {
+  background-color: var(--black);
+  color: var(--pink);
+}
+
+/*background hover animations */
+.button:hover .buttonText {
+  transform: translateX(10px);
+}
+
+.button:hover::after {
+  transform: translate(6px, -3px);
+}
+
+/* TRANSPARENT BACKGORUND */
+/* Transparent variant */
+.button.transparent {
+  background-color: transparent;
+  color: var(--pink);
+  /*margin-left:-14px;*/
+  align-items: left;
+  gap:6px;
+  margin-top: 0px;
+  padding: 0px;
+}
+
+.button.transparent:hover {
+  color: var(--pink);
+}
+
+/* no background hover animations */
+.button.transparent:hover .buttonText {
+  transform: translateX(0px);
+}
+
+.button.transparent:hover::after {
+  transform: translate(6px, -3px);
+}
+/*.button.transparent:hover::after {
+  transform: translate(6px, -3px);
+}*/

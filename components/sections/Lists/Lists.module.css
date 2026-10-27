@@ -1,0 +1,134 @@
+
+.lists {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.listRows {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.listRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  gap: 40px;
+  align-items: stretch;
+  width: 100%;
+}
+
+.imageLink {
+  display: block;
+  min-width: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imageLink:hover .image {
+  transform: scale(1.03);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 0;
+  padding: 12px 0;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.preHeadline {
+  margin: 0px;
+  font-family: var(--font-preheadline);
+  font-size: var(--tile-pre-headline);
+  font-weight: var(--weight-extralight);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--lavender);
+}
+
+.headline {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--main-news-headline);
+  font-weight: var(--weight-light);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  overflow-wrap: anywhere;
+}
+
+.storyby {
+  margin: 20px 0px 0px 0px;
+  font-family: var(--font-preheadline);
+  font-size: var(--tile-pre-headline);
+  font-weight: var(--weight-extralight);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /*color: var(--lavender);*/
+}
+.imagesby {
+  margin:-6px 0px 0px 0px;
+  font-family: var(--font-preheadline);
+  font-size: var(--tile-pre-headline);
+  font-weight: var(--weight-extralight);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /*color: var(--lavender);*/
+}
+.body {
+  margin: 0px;
+  font-family: var(--font-body);
+  font-size: var(--tile-body);
+  font-weight: var(--weight-extralight);
+  color:var(--lavender);
+  /*opacity:.8;*/
+}
+
+.wordmark {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.buttonWrapper {
+  margin-top: 4px;
+}
+
+@media (max-width: 700px) {
+  .listRows {
+    gap: 32px;
+  }
+
+  .listRow {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 16 / 9;
+  }
+
+  .content {
+    padding: 0;
+    gap: 16px;
+  }
+}

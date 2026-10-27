@@ -1,0 +1,98 @@
+
+.columnists {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  margin-block: var(--section-spacing);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 32px;
+  row-gap: 48px;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.imageLink {
+  display: block;
+  width: 100%;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 29/30;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imageLink:hover .image {
+  transform: scale(1.03);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding-top: 20px;
+}
+
+.preHeadline {
+  margin: 0px;
+  font-family: var(--font-preheadline);
+  font-size: var(--tile-pre-headline);
+  font-weight: var(--weight-extralight);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--lavender);
+}
+
+.headline {
+  margin: 0px;
+  font-family: var(--font-heading);
+  font-size: var(--tile-headline);
+  font-weight: var(--weight-black);
+}
+
+.body {
+  margin: 0px;
+  font-family: var(--font-body);
+  font-size: var(--tile-body);
+  font-weight: var(--weight-extralight);
+  color:var(--lavender);
+  /*opacity:.8;*/
+}
+
+.buttonWrapper {
+  margin-top: 8px;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 4 / 5;
+  }
+}
