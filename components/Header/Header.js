@@ -152,8 +152,8 @@ export default function Header() {
 
         {/* Right-hand actions */}
         <div className={styles.actions}>
-          <Link href="/subscribe">Subscribe</Link>
-          <Link href="/login">Login</Link>
+          <Link href="/">Subscribe</Link>
+          <Link href="/">Login</Link>
         </div>
       </div>
 
