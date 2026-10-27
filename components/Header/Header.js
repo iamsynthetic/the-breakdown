@@ -233,7 +233,7 @@ export default function Header() {
 
         <div className={styles.mobileActions}>
           <Link
-            href="/subscribe"
+            href="/"
             onClick={closeMenu}
             tabIndex={isMenuOpen ? 0 : -1}
           >
@@ -241,7 +241,7 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/login"
+            href="/"
             onClick={closeMenu}
             tabIndex={isMenuOpen ? 0 : -1}
           >
