@@ -46,7 +46,7 @@ export default function AnticipatedPage({ homecontent }) {
     <main>
       <Hero
         variant="home"
-        preHeadline="ANTICIPATED"
+        preHeadline="THE COLUMNISTS"
         headline="The Most Anticipated Heavy Music"
         wordmark={toPlainText(heroEntry?.fields?.storyby)}
         buttonText="read more"

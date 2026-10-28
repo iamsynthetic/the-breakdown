@@ -68,11 +68,7 @@ export default function Columnists({
 
           return (
             <article key={columnist.sys.id} className={styles.card}>
-              <Link
-                href={href}
-                className={styles.imageLink}
-                aria-label={`Read ${band || "columnist"}`}
-              >
+
                 <div className={styles.imageWrapper}>
                   <Image
                     src={`https:${imageUrl}?w=900&fm=webp&q=80`}
@@ -87,7 +83,6 @@ export default function Columnists({
                     className={styles.image}
                   />
                 </div>
-              </Link>
 
               <div className={styles.content}>
                 {preheadline && (
@@ -100,7 +95,7 @@ export default function Columnists({
 
                 {subheadline && <p className={styles.body}>{subheadline}</p>}
 
-                {slug && (
+                {/*{slug && (
                   <div className={styles.buttonWrapper}>
                     <Button
                       buttonText="Read More"
@@ -108,7 +103,7 @@ export default function Columnists({
                       variant="transparent"
                     />
                   </div>
-                )}
+                )}*/}
               </div>
             </article>
           );
